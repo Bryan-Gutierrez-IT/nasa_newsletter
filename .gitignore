@@ -1,4 +1,12 @@
+build/*
+!build/.gitkeep
+!build/img/
+build/img/*
+!build/img/.gitkeep
+
+downloads/*
+!downloads/.gitkeep
+
 __pycache__/
 *.pyc
-cards/myenv/
 cards/
