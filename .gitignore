@@ -1,5 +1,4 @@
-build/
-downloads/
 __pycache__/
 *.pyc
 cards/myenv/
+cards/
