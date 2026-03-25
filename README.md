@@ -1,5 +1,3 @@
-![Validate Scripts](https://github.com/Bryan-Gutierrez-IT/nasa_newsletter/actions/workflows/WORKFLOW-FILE.yml/badge.svg)
-
 # NASA APOD Newsletter Generator
 
 A Python automation project that pulls random Astronomy Picture of the Day entries from NASA’s APOD API, downloads the images, and generates an HTML newsletter using a Jinja template.
