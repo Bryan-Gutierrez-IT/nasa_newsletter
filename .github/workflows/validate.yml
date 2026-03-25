@@ -1,0 +1,36 @@
+name: Validate Scripts
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Verify required project files exist
+        run: |
+          test -f bin/proj02.py
+          test -f templates/newsletter.html.j2
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests Jinja2
+
+      - name: Validate Python syntax
+        run: |
+          python -m py_compile bin/proj02.py
+
+      - name: Validate Jinja import
+        run: |
+          python -c "import jinja2, requests; print('Imports OK')"
